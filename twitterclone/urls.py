@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from app.views import TweetListCreateAPIView, TweetRetrieveDestroyAPIView
+from app.views import TweetListCreateAPIView, TweetRetrieveDestroyAPIView, \
+                      LikeCreateDestroyAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tweets/', TweetListCreateAPIView.as_view()),
     path('tweets/<int:pk>', TweetRetrieveDestroyAPIView.as_view()),
+    path('likes/', LikeCreateDestroyAPIView.as_view()),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
 ]
