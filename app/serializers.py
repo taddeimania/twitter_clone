@@ -7,6 +7,6 @@ from app.models import Tweet
 class TweetSerializer(ModelSerializer):
 
     class Meta:
-        fields = ["id", "body", "created", "author"]
+        fields = "__all__"
         read_only_fields = ["author"]
         model = Tweet
